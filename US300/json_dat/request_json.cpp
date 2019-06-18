@@ -7,7 +7,8 @@ Request_Json::Request_Json()
 void Request_Json::create(char *msg, int &sz) 
 {
     CUATStart uatStart;
-    uatStart.setAddress(2019);
+    uatStart.setAddress(12500830);
+    uatStart.setMode(12);
     std::string strMsg = uatStart.getMessage();
     strcpy(msg, strMsg.c_str());
     sz = strMsg.size();

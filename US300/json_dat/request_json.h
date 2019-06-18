@@ -10,6 +10,7 @@ class Request_Json : public Request
   static void parse(CUATStart &request, UATStart &data)
   {
     data.address = request.getAddress();
+    data.Mode = request.getMode();
   }
 
 protected:

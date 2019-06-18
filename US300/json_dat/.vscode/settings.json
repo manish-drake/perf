@@ -40,6 +40,10 @@
         "tuple": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "atomic": "cpp",
+        "strstream": "cpp",
+        "cinttypes": "cpp",
+        "typeindex": "cpp"
     }
 }

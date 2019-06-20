@@ -11,13 +11,13 @@ protected:
     /*complete the data structure by adding reset of the properties from CUATADSBSummary*/
   };
  
-  virtual void process(const std::string &reply) = 0;
-  virtual std::string create() = 0;
+  virtual void process(char *repMsg, int &repSz) = 0;
+  virtual void create(char **repMsg, int &repSz) = 0;
 
 public:
   Reply();
-  void Process(const std::string &reply);
-  std::string Create();
+  void Process(char *repMsg, int &repSz);
+  void Create(char **repMsg, int &repSz);
   ~Reply();
 };
 #endif //REPLY_H

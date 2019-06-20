@@ -13,8 +13,8 @@ class Request_Json : public Request
   }
 
 protected:
-  virtual void create(char *msg, int &sz) override;
-  virtual void process(const std::string &msg) override;
+  virtual void create(char **reqMsg, int &reqSz) override;
+  virtual void process(char *reqMsg, int reqSz) override;
 
 public:
   Request_Json();

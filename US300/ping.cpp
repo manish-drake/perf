@@ -30,6 +30,7 @@ void Ping::Start()
         free(reqMsg);
         std::cout << "Loop: " << i << std::endl;
     }
+    std::cout << "done!" ;
 }
 
 Ping::~Ping()

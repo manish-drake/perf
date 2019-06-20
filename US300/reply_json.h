@@ -57,7 +57,7 @@ class Reply_Json : public Reply
     }
 
 protected:
-    virtual void process(char *repMsg, int &repSz) override;
+    virtual void process(char *repMsg, int repSz) override;
     virtual void create(char **repMsg, int &repSz) override;
 
 public:

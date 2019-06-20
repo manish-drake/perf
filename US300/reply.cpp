@@ -3,7 +3,7 @@ Reply::Reply()
 {
 }
 
-void Reply::Process(char *repMsg, int &repSz)
+void Reply::Process(char *repMsg, int repSz)
 {
     process(repMsg, repSz);
 }

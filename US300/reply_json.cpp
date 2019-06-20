@@ -3,7 +3,7 @@
 Reply_Json::Reply_Json()
 {
 }
-void Reply_Json::process(char *repMsg, int &repSz)
+void Reply_Json::process(char *repMsg, int repSz)
 {
     CUATADSBSummary uatADSBSummary;
     uatADSBSummary.setMessage(repMsg);

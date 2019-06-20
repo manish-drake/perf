@@ -5,10 +5,10 @@ using std::string;
 class Request
 {
 protected:
-    struct UATStart
+    struct UATStart 
     {
-        int address;
-        /*complete the data structure by adding reset of the properties from CUATStart*/
+        unsigned int address;
+        unsigned int Mode;
     };
 
     virtual void create(char **reqMsg, int &reqSz) = 0;

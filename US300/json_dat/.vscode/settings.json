@@ -40,6 +40,11 @@
         "tuple": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp",
-        "string": "cpp"
-    }
+        "string": "cpp",
+        "atomic": "cpp",
+        "strstream": "cpp",
+        "cinttypes": "cpp",
+        "typeindex": "cpp"
+    },
+    "C_Cpp.intelliSenseCacheSize": 1
 }

@@ -15,7 +15,7 @@ ApplicationWindow {
             spacing: 3
             Text{
                 id:abc
-                text:"abc"}
+                text:"n_controls"}
             Rectangle{
                 id:frame
                 Layout.fillWidth: true
@@ -31,7 +31,7 @@ ApplicationWindow {
             Rectangle{
                 id:frame2
                 width:200
-                height: 25
+                height:60
                 color: "lightgreen"
                 Text{
                     anchors.centerIn: parent
@@ -40,7 +40,6 @@ ApplicationWindow {
                     anchors.fill:parent
                     onClicked: {
                         console.log("button clicked")
-                        abc.text= txtPlain.text
                     }
                 }
             }
@@ -99,7 +98,6 @@ ApplicationWindow {
                     maximumValue: 5.0
                     stepSize: 1.0
                 }
-
             }
             RowLayout {
                 ExclusiveGroup { id: group1 }

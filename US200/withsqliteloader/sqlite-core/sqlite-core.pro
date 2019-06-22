@@ -38,7 +38,7 @@ HEADERS += \
 
 unix {
     LIBS += -lsqlite3
-    target.path = /opt/ts-qt/bin
+    target.path = /opt/us200-withsqliteloader/bin
     INSTALLS += target
 }
 

@@ -35,6 +35,10 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+        db.path = /opt/$${TARGET}/bin
+        db.files = $$PWD/../us200.db
+        INSTALLS += db
+
 HEADERS += \
     databuilder.h \
     navigationcore.h \

@@ -11,7 +11,7 @@ Rectangle {
         spacing: 3
         Text{
             id:abc
-            text:"abc"}
+            text:"using loader"}
         Rectangle{
             id:frame
             Layout.fillWidth: true
@@ -27,17 +27,14 @@ Rectangle {
         Rectangle{
             id:frame2
             width:200
-            height: 25
+            height: 60
             color: "lightgreen"
             Text{
                 anchors.centerIn: parent
                 text:"Submit"}
             MouseArea{
                 anchors.fill:parent
-                onClicked: {
-                    console.log("button clicked")
-                   abc.text= txtPlain.text
-                }
+                onClicked: console.log("button clicked")
             }
         }
         Image {

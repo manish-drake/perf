@@ -13,11 +13,11 @@ class Sock
         static auto context = zmq::context_t(1);
         return &context;
     }
-
+    bool m_closed = false;
 public:
     Sock();
-    void Listen(std::function<std::string(const std::string&)> &&cb);
-    std::string Send(const char *msz, int sz);
+    void Listen(std::function<void(char *reqMsg, int reqSz, char **repMsg, int &repSz)> &&cb);
+    void Send(char *reqMsg, int reqSz, char **repMsg, int &repSz);
     ~Sock();
 };
 #endif //SOCK_H

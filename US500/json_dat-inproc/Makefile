@@ -1,10 +1,10 @@
 ####### Compiler, tools and options
 
-CC            = gcc
-CXX           = g++
+# CC            = gcc
+# CXX           = g++
 DEFINES       = 
-CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -g -MMD -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+# CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      += -pipe -g -MMD -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I.
 VPATH	      = .
 LIBS          = -lreadline
@@ -21,8 +21,8 @@ DEL_DIR       = rmdir
 MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
-LINK          = g++
-LFLAGS        = 
+# LINK          = g++
+# LFLAGS        = 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -61,7 +61,7 @@ all: $(TARGET)
 
 
 $(TARGET): Makefile  $(OBJECTS_DIR) $(OBJECTS)
-	$(LINK) $(LFLAGS) -o $(DESTDIR)/$(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
+	$(CXX) $(LFLAGS) -o $(DESTDIR)/$(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 $(OBJECTS_DIR):
 	$(MKDIR) $(OBJECTS_DIR)

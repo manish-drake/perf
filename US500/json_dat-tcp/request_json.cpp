@@ -4,19 +4,19 @@ Request_Json::Request_Json()
 {
 }
 
-void Request_Json::create(char *msg, int &sz) 
+void Request_Json::create(char **reqMsg, int &reqSz) 
 {
     CUATStart uatStart;
     uatStart.setAddress(12500830);
     uatStart.setMode(12);
     std::string strMsg = uatStart.getMessage();
-    strcpy(msg, strMsg.c_str());
-    sz = strMsg.size();
+    *reqMsg = strdup(const_cast<char*>(strMsg.c_str()));
+    reqSz = strMsg.size();
 }
-void Request_Json::process(const std::string &msg) 
+void Request_Json::process(char *reqMsg, int reqSz) 
 {
     CUATStart uatStart;
-    uatStart.setMessage(msg);
+    uatStart.setMessage(reqMsg);
     UATStart data;
     parse(uatStart, data);
 }

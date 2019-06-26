@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>img/qtlogo.png</file>
+        <file>img/left-arrow_light.png</file>
+        <file>img/right-arrow_light.png</file>
+        <file>fonts/Roboto-Bold.ttf</file>
+        <file>fonts/Roboto-Light.ttf</file>
+        <file>fonts/Roboto-Regular.ttf</file>
+        <file>fonts/RobotoCondensed-Bold.ttf</file>
+        <file>fonts/RobotoCondensed-Light.ttf</file>
+        <file>fonts/RobotoCondensed-Regular.ttf</file>
+    </qresource>
+</RCC>

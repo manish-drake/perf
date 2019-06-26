@@ -19,18 +19,14 @@ void Ping::Start()
     Sock sock;
     for (int i = 0; i < 10000; i++)
     {
-        char *reqMsg;
+        char msg[1024] = {0};
         int sz = 0;
-        m_request->Create(&reqMsg, sz);  //Create the message CUATStart   
-
-        char *repMsg;
-        int  repSz;
-        sock.Send(reqMsg, sz, &repMsg, repSz);
-        m_reply->Process(repMsg, repSz); //Process the reply CUATADSBSummary
-        free(reqMsg);
+        m_request->Create(msg, sz);  //Create the message CUATStart      
+        auto reply = sock.Send(msg, sz);
+        m_reply->Process(reply); //Process the reply CUATADSBSummary
+        
         std::cout << "Loop: " << i << std::endl;
     }
-    std::cout << "done!" ;
 }
 
 Ping::~Ping()

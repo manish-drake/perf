@@ -3,13 +3,13 @@ Reply::Reply()
 {
 }
 
-void Reply::Process(char *repMsg, int repSz)
+void Reply::Process(const std::string &reply)
 {
-    process(repMsg, repSz);
+    process(reply);
 }
-void Reply::Create(char **repMsg, int &repSz)
+std::string Reply::Create()
 {
-    create(repMsg, repSz);
+    return create();
 }
 Reply::~Reply()
 {

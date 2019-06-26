@@ -71,7 +71,7 @@ class TServerMessage
     {
         mWriteValid=true;
         mWriteRoot[name]=(Json::Value::Int) value;
-        // printf("Write int %s %d\n",name,value);
+        printf("Write int %s %d\n",name,value);
     }
 
     int getInt(char const* name)

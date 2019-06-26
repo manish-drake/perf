@@ -1,18 +1,18 @@
 #include "reply_json.h"
-#include <cstring>
 Reply_Json::Reply_Json()
 {
 }
-void Reply_Json::process(char *repMsg, int repSz)
+void Reply_Json::process(const std::string &reply) 
 {
     CUATADSBSummary uatADSBSummary;
-    uatADSBSummary.setMessage(repMsg);
+    uatADSBSummary.setMessage(reply);
     UATADSBSummary data;
     parse(uatADSBSummary, data);
 }
-void Reply_Json::create(char **repMsg, int &repSz)
+std::string Reply_Json::create()
 {
     CUATADSBSummary uatADSBSummary;
+    uatADSBSummary.setCallsign("0735");
     uatADSBSummary.setAddress(11422302);
     uatADSBSummary.setFlightID("DELTA");
     uatADSBSummary.setCallsignID(7);
@@ -56,12 +56,8 @@ void Reply_Json::create(char **repMsg, int &repSz)
     uatADSBSummary.setModeVNAV(true);
     uatADSBSummary.setModeAltitudeHold(true);
     uatADSBSummary.setModeApproach(true);
-    uatADSBSummary.setModeLNAV(true);
-
-    std::string data = uatADSBSummary.getMessage();
-    const char *cdata = data.c_str();
-    repSz = data.size();
-    *repMsg = strdup(const_cast<char *>(cdata));
+    uatADSBSummary.setModeLNAV(true);  
+    return uatADSBSummary.getMessage();
 }
 
 Reply_Json::~Reply_Json()

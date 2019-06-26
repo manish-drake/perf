@@ -1,9 +1,9 @@
 #include "pong.h"
 Pong::Pong()
 {
-    m_sock.Listen([this](const std::string &msg) -> std::string {
-        m_request->Process(msg);
-        return m_reply->Create();
+    m_sock.Listen([this](char *reqMsg, int reqSz, char **repMsg, int &repSz) -> void {
+        m_request->Process(reqMsg, reqSz);
+        m_reply->Create(repMsg, repSz);
     });
 }
 

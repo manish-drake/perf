@@ -3,14 +3,14 @@ Request::Request()
 {
 }
 
-void Request::Create(char *msg, int &sz)
+void Request::Create(char **reqMsg, int &reqSz)
 {
-    create(msg, sz);
+    create(reqMsg, reqSz);
 }
 
-void Request::Process(const std::string &msg)
+void Request::Process(char *reqMsg, int reqSz)
 {
-    process(msg);
+    process(reqMsg, reqSz);
 }
 
 Request::~Request()

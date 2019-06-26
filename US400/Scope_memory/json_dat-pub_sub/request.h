@@ -11,13 +11,13 @@ protected:
         unsigned int Mode;
     };
 
-    virtual void create(char *msg, int &sz) = 0;
-    virtual void process(const std::string &msg) = 0;
+    virtual void create(char **reqMsg, int &reqSz) = 0;
+    virtual void process(char *reqMsg, int reqSz) = 0;
 
 public:
     Request();
-    void Create(char *msg, int &sz);
-    void Process(const std::string &msg);
+    void Create(char **reqMsg, int &reqSz);
+    void Process(char *reqMsg, int reqSz);
     ~Request();
 };
 #endif //REQUEST_H

@@ -1,5 +1,6 @@
 #include "request_binary.h"
 #include <cstring>
+#include <stdio.h>
 
 Request_Binary::Request_Binary()
 {
@@ -11,6 +12,7 @@ void Request_Binary::create(char **reqMsg, int &reqSz)
     reqSz = sizeof(UATStart);
     *reqMsg = (char*)malloc(reqSz);
     memcpy(*reqMsg, &uatStart, sizeof(UATStart));
+    printf(*reqMsg);
 }
 
 void Request_Binary::process(char *reqMsg, int reqSz) 

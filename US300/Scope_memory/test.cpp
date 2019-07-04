@@ -1,5 +1,9 @@
 #include "test.h"
-#include "scope_timer.h"
+#include <time.h>
+#include <sys/time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include "scope_memself.h"
 Test::Test()
 {
 }
@@ -23,9 +27,12 @@ void Test::Run()
     #3 parses data
     #4 sends back
     #5 repeat for 10k iterations
-    */
-    scope_timer s;
+    */ 
+    scope_memself s;  
+    
     m_ping.Start();
+
+    s.Dispose();
 }
 
 void Test::Teardown()

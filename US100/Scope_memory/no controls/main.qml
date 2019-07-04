@@ -8,7 +8,7 @@ ApplicationWindow {
     height: 800
     title: qsTr("No controls")
     Component.onCompleted: {
-             Qt.callLater(Qt.quit)
+             navModel.scopeDispose()
         }
     }
 

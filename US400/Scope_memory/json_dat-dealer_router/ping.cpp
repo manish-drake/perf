@@ -3,6 +3,7 @@
 #include <iostream>
 #include "UATADSBSummary.h"
 #include "request.h"
+#include "scope_memself.h"
 
 Ping::Ping()
 {
@@ -16,6 +17,8 @@ void Ping::Create(Request *request, Reply *reply)
 
 void Ping::Start()
 {
+    scope_memself s;
+    s.Reset("init");
     Sock sock;
     for (int i = 0; i < 10000; i++)
     {
@@ -27,6 +30,8 @@ void Ping::Start()
         
         std::cout << "Loop: " << i << std::endl;
     }
+    std::cout << "done!" << std::endl;
+    s.Dispose();
 }
 
 Ping::~Ping()

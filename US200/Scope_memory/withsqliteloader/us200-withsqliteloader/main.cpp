@@ -38,7 +38,10 @@ int main(int argc, char *argv[])
         QQmlApplicationEngine engine;
         QQmlContext *context = engine.rootContext();
 
+        scope_memself s;
+
         NavigationModel navigationModel;
+        navigationModel.m_scope_memself = &s;
         context->setContextProperty("navigationModel", &navigationModel);
 
         engine.load(QUrl(QLatin1String("qrc:/main.qml")));

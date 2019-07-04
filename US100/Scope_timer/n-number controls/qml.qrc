@@ -11,5 +11,6 @@
         <file>fonts/RobotoCondensed-Bold.ttf</file>
         <file>fonts/RobotoCondensed-Light.ttf</file>
         <file>fonts/RobotoCondensed-Regular.ttf</file>
+        <file>Page1.qml</file>
     </qresource>
 </RCC>

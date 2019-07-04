@@ -1,9 +1,8 @@
-import QtQuick 2.0
+import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 1.4
 
-Rectangle {
-    anchors.fill:parent
+Item {
     ColumnLayout{
         id:cols
         anchors.fill:parent
@@ -27,14 +26,16 @@ Rectangle {
         Rectangle{
             id:frame2
             width:200
-            height: 60
+            height:60
             color: "lightgreen"
             Text{
                 anchors.centerIn: parent
                 text:"Submit"}
             MouseArea{
                 anchors.fill:parent
-                onClicked: console.log("button clicked")
+                onClicked: {
+                    console.log("button clicked")
+                }
             }
         }
         Image {
@@ -92,7 +93,6 @@ Rectangle {
                 maximumValue: 5.0
                 stepSize: 1.0
             }
-
         }
         RowLayout {
             ExclusiveGroup { id: group1 }
@@ -128,4 +128,3 @@ Rectangle {
         }
     }
 }
-

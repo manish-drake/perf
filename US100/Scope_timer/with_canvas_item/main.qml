@@ -11,6 +11,6 @@ ApplicationWindow {
         width: 480; height: 800
     }
     Component.onCompleted: {
-             Qt.callLater(Qt.quit)
+             navModel.appLoaded()
         }
 }

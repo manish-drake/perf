@@ -6,6 +6,7 @@
 #include "dbcache.h"
 #include "modelbase.h"
 #include "ts-model_global.h"
+#include "scope_memself.h"
 
 class TSMODELSHARED_EXPORT NavigationModel : public ModelBase
 {
@@ -23,8 +24,10 @@ class TSMODELSHARED_EXPORT NavigationModel : public ModelBase
     std::unique_ptr<std::vector<std::unique_ptr<NavigationCore>>> m_data;
 public:
     NavigationModel(QObject *parent = 0);
+    scope_memself *m_scope_memself;
     Q_INVOKABLE QString nextPath(const QString &currPage);
     Q_INVOKABLE QString prevPath(const QString &currPage);
+    Q_INVOKABLE void scopeDispose();
 };
 
 #endif // NAVIGATIONMODEL_H

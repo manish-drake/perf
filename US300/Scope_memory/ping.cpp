@@ -4,6 +4,7 @@
 #include "UATADSBSummary.h"
 #include "request.h"
 
+
 Ping::Ping()
 {
 }
@@ -17,7 +18,7 @@ void Ping::Create(Request *request, Reply *reply)
 void Ping::Start()
 {
     Sock sock;
-    for (int i = 0; i < 2000; i++)
+    for (int i = 0; i < 10000; i++)
     {
         char *reqMsg;
         int sz = 0;

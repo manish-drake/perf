@@ -10,15 +10,12 @@ void NavModel::reset(const QString tag)
 {
     std::string str = tag.toStdString();
     const char* p = str.c_str();
-    m_scopeTimer.Reset(p);
+    m_scopeMemSelf->Reset(p);
 }
 
 void NavModel::scopeDispose()
 {
-    m_scopeTimer.Dispose();
+    m_scopeMemSelf->Dispose();
 }
 
-void NavModel::appLoaded()
-{
-    emit onAppLoaded();
-}
+

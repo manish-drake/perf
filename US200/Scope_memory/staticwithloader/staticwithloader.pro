@@ -39,5 +39,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    scope_timer.h \
-    navmodel.h
+    navmodel.h \
+    memself.h \
+    scope_memself.h

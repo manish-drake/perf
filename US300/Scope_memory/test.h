@@ -3,8 +3,8 @@
 #include <string>
 #include "ping.h"
 #include "pong.h"
-// #include "request_json.h"
-// #include "reply_json.h"
+#include "request_json.h"
+#include "reply_json.h"
 #include "request_binary.h"
 #include "reply_binary.h"
 

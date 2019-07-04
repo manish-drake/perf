@@ -27,12 +27,14 @@ public:
     processMem_t GetProcessMemory()
     {
         FILE *file = fopen("/proc/self/status", "r");
-        char line[128];
+        char line[128] = {0};
         processMem_t processMem;
 
-        bool sz, rss;
+        bool sz=false;
+        bool rss = false;
         while (fgets(line, 128, file) != NULL)
         {
+//            printf(line);
             if (!sz && (strncmp(line, "VmSize:", 7) == 0))
             {
                 processMem.virtualMem = parseLine(line);

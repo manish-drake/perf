@@ -1,14 +1,14 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QFont>
 #include <QFontDatabase>
 #include <QDebug>
-#include "scope_timer.h"
+#include "scope_memself.h"
+#include "navmodel.h"
 
 int main(int argc, char *argv[])
 {
-    {
-        scope_timer s;
         QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
         QGuiApplication app(argc, argv);
 
@@ -22,13 +22,17 @@ int main(int argc, char *argv[])
                else qInfo() << "Fonts not loaded from file-path provided";
 
         QQmlApplicationEngine engine;
-
-//        QObject::connect(&engine, &QQmlApplicationEngine::quit, &QGuiApplication::quit);
+        QQmlContext *context = engine.rootContext();
+        scope_memself s;
+        s.Reset("init");
+        NavModel navModel;
+        navModel.m_scopeMemSelf = &s;
+        context->setContextProperty("navModel", &navModel);
 
         engine.load(QUrl(QLatin1String("qrc:/main.qml")));
         if (engine.rootObjects().isEmpty())
             return -1;
 
         return app.exec();
-    }
+
 }

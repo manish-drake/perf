@@ -8,14 +8,31 @@ ApplicationWindow {
     height: 800
     title: qsTr("us200")
     property string currPath
+    Item{
+        anchors{top: parent.top; right: parent.right}
+        height:90
+        width: 90
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+            onClicked: Qt.quit()
+        }
+        Image{
+            anchors.centerIn: parent
+            source: "qrc:/img/close.png"
+            asynchronous: true
+        }
+    }
     Loader{
         id:loader
         anchors.fill: parent
         source: "Page1.qml"
         onSourceChanged: {
+             navigationModel.scopeDispose()
         }
     }
     Component.onCompleted: {
+        navigationModel.scopeDispose()
     }
 }
 

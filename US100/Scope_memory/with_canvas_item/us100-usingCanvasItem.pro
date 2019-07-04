@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    itemcanvas.cpp
+    itemcanvas.cpp \
+    navmodel.cpp
 
 RESOURCES += qml.qrc
 
@@ -31,4 +32,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     itemcanvas.h \
-    scope_timer.h
+    memself.h \
+    scope_memself.h \
+    navmodel.h

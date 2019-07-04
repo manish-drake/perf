@@ -1,9 +1,10 @@
-import QtQuick 2.9
+import QtQuick 2.7
 import QtQuick.Layouts 1.3
 
 Item{
     anchors.fill: parent
-    Text{text:"Page1"; font.bold: true; anchors.fill: parent; horizontalAlignment: Text.AlignHCenter}
+    anchors.topMargin: 80
+    Text{id:p1;text:"Page1"; font.bold: true; anchors.fill: parent; horizontalAlignment: Text.AlignHCenter}
     GridLayout {
         id: grid
         anchors.fill: parent
@@ -62,7 +63,7 @@ Item{
             }
             MouseArea{
                 anchors.fill:parent
-                onClicked: {
+                onClicked:{
                     first = false;
                     navModel.reset("next");
                     loader.setSource("Page2.qml")

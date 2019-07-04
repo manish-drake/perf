@@ -39,7 +39,7 @@ DEPS          = $(OBJECTS:.o=.d)
 DESTDIR       = .
 TARGET        = target
 ####### Customized Vars
-INCPATH	     += -I./json-core
+INCPATH	     += -I./json-core -I/home/manish/git/libzmq-bin/include
 VPATH        +=	./json-core
 LIBS         += -lzmq -pthread
 SOURCES	     += jsoncpp.cpp

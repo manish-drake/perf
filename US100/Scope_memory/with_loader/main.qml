@@ -12,6 +12,6 @@ ApplicationWindow {
         source: "qrc:/Page2.qml"
     }
     Component.onCompleted: {
-        Qt.callLater(Qt.quit)
+        navModel.scopeDispose()
     }
 }

@@ -15,5 +15,6 @@
         <file>fonts/RobotoCondensed-Bold.ttf</file>
         <file>fonts/RobotoCondensed-Light.ttf</file>
         <file>fonts/RobotoCondensed-Regular.ttf</file>
+        <file>img/close.png</file>
     </qresource>
 </RCC>

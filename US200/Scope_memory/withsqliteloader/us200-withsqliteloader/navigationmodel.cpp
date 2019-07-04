@@ -7,6 +7,7 @@ NavigationModel::NavigationModel(QObject *parent):
 
 QString NavigationModel::nextPath(const QString &currPage)
 {
+    m_scope_memself->Reset("next");
     up_catalogue navigation;
      if (DBCache::Current().Get("navigation", navigation))
      {
@@ -22,6 +23,7 @@ QString NavigationModel::nextPath(const QString &currPage)
 
 QString NavigationModel::prevPath(const QString &currPage)
 {
+    m_scope_memself->Reset("prev");
     up_catalogue navigation;
      if (DBCache::Current().Get("navigation", navigation))
      {
@@ -33,6 +35,11 @@ QString NavigationModel::prevPath(const QString &currPage)
          return path;
          }
      }
+}
+
+void NavigationModel::scopeDispose()
+{
+    m_scope_memself->Dispose();
 }
 
 int NavigationModel::rowCount(const QModelIndex &parent) const

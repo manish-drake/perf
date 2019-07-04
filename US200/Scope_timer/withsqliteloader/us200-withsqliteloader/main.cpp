@@ -8,7 +8,6 @@
 #include "navigationmodel.h"
 #include "dbinitializer.h"
 #include "scope_timer.h"
-#include "scope_memself.h"
 
 //#define DATA_CREATION_MODE ;
 
@@ -21,8 +20,6 @@ int main(int argc, char *argv[])
     }
 #else
     {
-        static scope_timer s;
-        s.Reset("init");
         DBInitializer dbInitializer;
         dbInitializer.initializeDBCache();
 
@@ -40,6 +37,10 @@ int main(int argc, char *argv[])
 
         QQmlApplicationEngine engine;
         QQmlContext *context = engine.rootContext();
+
+        static scope_timer s;
+        s.Reset("init");
+
         NavigationModel navigationModel;
         context->setContextProperty("navigationModel", &navigationModel);
 

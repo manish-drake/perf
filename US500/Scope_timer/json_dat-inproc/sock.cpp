@@ -9,7 +9,7 @@ Sock::Sock()
 void Sock::Listen(std::function<void(char *reqMsg, int reqSz, char **repMsg, int &repSz)> &&cb)
 {
     std::thread([this, cb]() {
-        zmq::socket_t socket(*getCtx(), ZMQ_REP);
+        zmq::socket_t socket(*getCtx(), ZMQ_ROUTER);
         socket.bind(ENDPOINT);
         zmq::pollitem_t items[] = {
             {socket, 0, ZMQ_POLLIN, 0}};
@@ -34,6 +34,7 @@ void Sock::Listen(std::function<void(char *reqMsg, int reqSz, char **repMsg, int
                 {
                     zmq::message_t responseMsg(repSz);
                     memcpy(responseMsg.data(), repMsg, repSz);
+                    socket.send(message, ZMQ_SNDMORE);
                     socket.send(responseMsg);
                 }
                 free(repMsg);
@@ -48,7 +49,7 @@ void Sock::Send(char *reqMsg, int reqSz, char **repMsg, int &repSz)
 {
     if (getCtx())
     {
-        zmq::socket_t socket(*getCtx(), ZMQ_REQ);
+        zmq::socket_t socket(*getCtx(), ZMQ_DEALER);
         zmq::message_t message(reqSz);
         memcpy(message.data(), reqMsg, reqSz);
         socket.connect(ENDPOINT);

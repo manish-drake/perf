@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.3
 
 Item{
     anchors.fill: parent
+    anchors.topMargin: 80
     Text{text:"Page4"; font.bold: true; anchors.fill: parent; horizontalAlignment: Text.AlignHCenter}
     GridLayout {
         id: grid

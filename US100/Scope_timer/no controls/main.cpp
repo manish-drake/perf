@@ -1,21 +1,31 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include "scope_timer.h"
+#include "navmodel.h"
 
 int main(int argc, char *argv[])
-{
-    {
-        scope_timer s;
-        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-        QGuiApplication app(argc, argv);
+{    
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication app(argc, argv);
 
-        QQmlApplicationEngine engine;
+    QQmlApplicationEngine engine;
+    QQmlContext *context = engine.rootContext();
 
-//        QObject::connect(&engine, &QQmlApplicationEngine::quit, &QGuiApplication::quit);
-        engine.load(QUrl(QLatin1String("qrc:/main.qml")));
-        if (engine.rootObjects().isEmpty())
-            return -1;
+    static scope_timer s;
+    s.Reset("init");
 
-        return app.exec();
-    }
+    NavModel navModel;
+    context->setContextProperty("navModel", &navModel);
+
+    QObject::connect(&navModel, &NavModel::onAppLoaded,
+                     [s](){
+        s.Dispose();
+    });
+
+    engine.load(QUrl(QLatin1String("qrc:/main.qml")));
+    if (engine.rootObjects().isEmpty())
+        return -1;
+
+    return app.exec();
 }

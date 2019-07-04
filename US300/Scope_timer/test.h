@@ -3,17 +3,17 @@
 #include <string>
 #include "ping.h"
 #include "pong.h"
-// #include "request_json.h"
-// #include "reply_json.h"
-#include "request_binary.h"
-#include "reply_binary.h"
+#include "request_json.h"
+#include "reply_json.h"
+// #include "request_binary.h"
+// #include "reply_binary.h"
 
 using std::string;
 
 class Test
 {
-  Request_Binary m_request;
-  Reply_Binary m_reply;
+  Request_Json m_request;
+  Reply_Json m_reply;
   Ping m_ping;
   Pong m_pong;
   public:

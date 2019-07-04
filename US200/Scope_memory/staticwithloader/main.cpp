@@ -4,41 +4,35 @@
 #include <QFont>
 #include <QFontDatabase>
 #include <QDebug>
-#include "scope_timer.h"
+#include "scope_memself.h"
 #include "navmodel.h"
 
 int main(int argc, char *argv[])
 {
-    {
-        static scope_timer s;
-        s.Reset("init");
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication app(argc, argv);
 
-        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-        QGuiApplication app(argc, argv);
-
-        if(QFontDatabase::addApplicationFont(":/fonts/Roboto-Regular.ttf") != -1){
-            QFontDatabase::addApplicationFont(":/fonts/Roboto-Light.ttf");
-            QFontDatabase::addApplicationFont(":/fonts/Roboto-Bold.ttf");
-            QFont robotoFont;
-            robotoFont.setFamily("Roboto");
-            app.setFont(robotoFont);
-        }
-        else qInfo() << "Fonts not loaded from file-path provided";
-
-        QQmlApplicationEngine engine;
-        QQmlContext *context = engine.rootContext();
-        NavModel navModel;
-        context->setContextProperty("navModel", &navModel);
-
-        QObject::connect(&navModel, &NavModel::onAppLoaded,
-                         [s](){
-            s.Dispose();
-        });
-
-        engine.load(QUrl(QLatin1String("qrc:/main.qml")));
-        if (engine.rootObjects().isEmpty())
-            return -1;
-
-        return app.exec();
+    if(QFontDatabase::addApplicationFont(":/fonts/Roboto-Regular.ttf") != -1){
+        QFontDatabase::addApplicationFont(":/fonts/Roboto-Light.ttf");
+        QFontDatabase::addApplicationFont(":/fonts/Roboto-Bold.ttf");
+        QFont robotoFont;
+        robotoFont.setFamily("Roboto");
+        app.setFont(robotoFont);
     }
+    else qInfo() << "Fonts not loaded from file-path provided";
+
+    QQmlApplicationEngine engine;
+    QQmlContext *context = engine.rootContext();
+    scope_memself s;
+    NavModel navModel;
+    navModel.m_scopeMemSelf = &s;
+    context->setContextProperty("navModel", &navModel);
+
+
+
+    engine.load(QUrl(QLatin1String("qrc:/main.qml")));
+    if (engine.rootObjects().isEmpty())
+        return -1;
+
+    return app.exec();
 }

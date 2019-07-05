@@ -30,11 +30,12 @@ Item {
             color: "lightgreen"
             Text{
                 anchors.centerIn: parent
-                text:"Submit"}
+                text:"Modal Page 1"}
             MouseArea{
                 anchors.fill:parent
                 onClicked: {
-                    console.log("button clicked")
+                    navModel.reset("layer 1")
+                    modalLoader1.setSource("qrc:/ModalPage1.qml")
                 }
             }
         }

@@ -1,4 +1,6 @@
 import QtQuick 2.0
+
+import QtQuick 2.0
 import QtQuick.Layouts 1.3
 
 Rectangle {
@@ -30,11 +32,11 @@ Rectangle {
                         id: headerBtn
                         anchors{top: parent.top; bottom: parent.bottom}
                         width: 90
-//                        MouseArea {
-//                            id: mouseArea
-//                            anchors.fill: parent
-//                            onClicked: modalLoader2.setSource("")
-//                        }
+                        MouseArea {
+                            id: mouseArea
+                            anchors.fill: parent
+                            onClicked: modalLoader2.setSource("")
+                        }
                         Image{
                                 anchors.centerIn: parent
                                 source: "qrc:/img/close.png"
@@ -57,12 +59,12 @@ Rectangle {
                     anchors{right:parent.right; bottom:parent.bottom; rightMargin: 20}
                     Text{
                         anchors.centerIn: parent
-                        text:"close"
+                        text:"Close App"
                     }
-//                    MouseArea{
-//                        anchors.fill:parent
-//                        onClicked: modalLoader2.setSource("")
-//                    }
+                    MouseArea{
+                        anchors.fill:parent
+                        onClicked: Qt.quit()
+                    }
                 }
 
             }

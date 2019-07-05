@@ -38,16 +38,16 @@ int main(int argc, char *argv[])
         QQmlApplicationEngine engine;
         QQmlContext *context = engine.rootContext();
 
-        static scope_timer s;
-        s.Reset("init");
-
         NavigationModel navigationModel;
         context->setContextProperty("navigationModel", &navigationModel);
 
+        static scope_timer s;
         QObject::connect(&navigationModel, &NavigationModel::onAppLoaded,
                          [s](){
             s.Dispose();
         });
+
+        s.Reset("init");
 
         engine.load(QUrl(QLatin1String("qrc:/main.qml")));
         if (engine.rootObjects().isEmpty())

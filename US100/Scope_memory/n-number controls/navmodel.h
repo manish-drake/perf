@@ -11,6 +11,7 @@ class NavModel : public QObject
 public:
     explicit NavModel(QObject *parent = nullptr);
     scope_memself *m_scopeMemSelf;
+    Q_INVOKABLE void reset(const QString tag);
     Q_INVOKABLE void scopeDispose();
 
 };

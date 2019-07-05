@@ -39,11 +39,10 @@ int main(int argc, char *argv[])
         QQmlContext *context = engine.rootContext();
 
         scope_memself s;
-
-        NavigationModel navigationModel;
-        navigationModel.m_scope_memself = &s;
+        NavigationModel navigationModel;        
         context->setContextProperty("navigationModel", &navigationModel);
 
+        navigationModel.m_scope_memself = &s;
         engine.load(QUrl(QLatin1String("qrc:/main.qml")));
         if (engine.rootObjects().isEmpty())
             return -1;

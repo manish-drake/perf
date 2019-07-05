@@ -32,11 +32,11 @@ Rectangle {
                         id: headerBtn
                         anchors{top: parent.top; bottom: parent.bottom}
                         width: 90
-//                        MouseArea {
-//                            id: mouseArea
-//                            anchors.fill: parent
-//                            onClicked: modalLoader2.setSource("")
-//                        }
+                        MouseArea {
+                            id: mouseArea
+                            anchors.fill: parent
+                            onClicked: modalLoader2.setSource("")
+                        }
                         Image{
                                 anchors.centerIn: parent
                                 source: "qrc:/img/close.png"
@@ -61,10 +61,10 @@ Rectangle {
                         anchors.centerIn: parent
                         text:"close"
                     }
-//                    MouseArea{
-//                        anchors.fill:parent
-//                        onClicked: modalLoader2.setSource("")
-//                    }
+                    MouseArea{
+                        anchors.fill:parent
+                        onClicked: modalLoader2.setSource("")
+                    }
                 }
 
             }

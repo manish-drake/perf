@@ -23,13 +23,13 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     QQmlContext *context = engine.rootContext();
+
     scope_memself s;
     NavModel navModel;
-    navModel.m_scopeMemSelf = &s;
     context->setContextProperty("navModel", &navModel);
 
-
-
+    navModel.m_scopeMemSelf = &s;
+    navModel.reset("init");
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;

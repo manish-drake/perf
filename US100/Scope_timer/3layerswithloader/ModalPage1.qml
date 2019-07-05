@@ -30,11 +30,11 @@ Rectangle {
                         id: headerBtn
                         anchors{top: parent.top; bottom: parent.bottom}
                         width: 90
-//                        MouseArea {
-//                            id: mouseArea
-//                            anchors.fill: parent
-//                            onClicked: modalLoader1.setSource("")
-//                        }
+                        MouseArea {
+                            id: mouseArea
+                            anchors.fill: parent
+                            onClicked: modalLoader1.setSource("")
+                        }
                         Image{
                                 anchors.centerIn: parent
                                 source: "qrc:/img/close.png"
@@ -60,13 +60,13 @@ Rectangle {
                         anchors.centerIn: parent
                         text:"Modal Page 2"
                     }
-//                    MouseArea{
-//                        anchors.fill:parent
-//                        onClicked: {
-//                            navModel.reset("p2");
-//                            modalLoader2.setSource("qrc:/ModalPage2.qml")
-//                        }
-//                    }
+                    MouseArea{
+                        anchors.fill:parent
+                        onClicked: {
+                            navModel.reset("layer 2")
+                            modalLoader2.setSource("qrc:/ModalPage2.qml")
+                        }
+                    }
                 }
             }
         }

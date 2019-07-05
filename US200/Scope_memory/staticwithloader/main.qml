@@ -6,7 +6,6 @@ ApplicationWindow {
     width: 480
     height: 800
     title: qsTr("us200")
-    property bool first: true
     Item{
         anchors{top: parent.top; right: parent.right}
         height:90
@@ -27,7 +26,7 @@ ApplicationWindow {
         anchors.fill: parent
         source:"Page1.qml"
         onSourceChanged: {
-            if(!first) navModel.scopeDispose()
+            navModel.scopeDispose()
         }
     }
 }

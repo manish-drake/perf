@@ -10,6 +10,16 @@ ApplicationWindow {
     Component{ModalPage1{}}
     Component{ModalPage2{}}
     Page1{}
+    Loader{
+        id: modalLoader1
+        anchors.fill: parent
+        onSourceChanged: navModel.scopeDispose()
+    }
+    Loader{
+        id: modalLoader2
+        anchors.fill: parent
+        onSourceChanged: navModel.scopeDispose()
+    }
     Component.onCompleted: {
         navModel.appLoaded()
     }

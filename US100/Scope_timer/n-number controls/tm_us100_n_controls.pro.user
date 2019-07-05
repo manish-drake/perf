@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.4.1, 2019-07-05T19:30:30. -->
+<!-- Written by QtCreator 4.4.1, 2019-07-05T20:38:11. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -272,6 +272,7 @@
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100_n_controls-Brig-Debug-timer/tm_us100_n_controls</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100_n_controls-Brig-Debug-timer/us100_n_controls</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100_n_controls-Brig-Debug/us100_n_controls</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/build-us100_n_controls-Brig-Debug-timer/tm_us100_n_controls</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100_n_controls-Brig-Debug-timer/us100_n_controls</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
@@ -280,6 +281,7 @@
        <value type="QString">192.168.10.9</value>
        <value type="QString">192.168.10.2</value>
        <value type="QString">192.168.10.2</value>
+       <value type="QString">192.168.10.14</value>
        <value type="QString">192.168.10.8</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
@@ -288,9 +290,11 @@
        <value type="QString">/opt/tm_us100_n_controls/bin</value>
        <value type="QString">/opt/us100_n_controls/bin</value>
        <value type="QString">/opt/us100_n_controls/bin</value>
+       <value type="QString">/opt/tm_us100_n_controls/bin</value>
        <value type="QString">/opt/us100_n_controls/bin</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedSysroots">
+       <value type="QString"></value>
        <value type="QString"></value>
        <value type="QString"></value>
        <value type="QString"></value>
@@ -304,6 +308,7 @@
        <value type="QDateTime">2019-07-05T19:18:46</value>
        <value type="QDateTime">2019-06-27T18:32:48</value>
        <value type="QDateTime">2019-06-27T16:11:58</value>
+       <value type="QDateTime">2019-07-05T20:35:28</value>
        <value type="QDateTime">2019-07-03T18:48:52</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.4.1, 2019-07-05T19:30:30. -->
+<!-- Written by QtCreator 4.4.1, 2019-07-05T20:38:23. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -269,17 +269,20 @@
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100-usingloader-Brig-Debug/us100-usingloader</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100-usingloader-Brig-Debug-timer/tm_us100-usingloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/build-us100-usingloader-Brig-Debug-timer/tm_us100-usingloader</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100-usingloader-Brig-Debug-timer/us100-usingloader</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100-usingloader-Brig-Debug/us100-usingloader</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
        <value type="QString">192.168.20.35</value>
+       <value type="QString">192.168.10.14</value>
        <value type="QString">192.168.10.9</value>
        <value type="QString">192.168.10.2</value>
        <value type="QString">192.168.10.4</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/opt/us100-usingloader/bin</value>
+       <value type="QString">/opt/tm_us100-usingloader/bin</value>
        <value type="QString">/opt/tm_us100-usingloader/bin</value>
        <value type="QString">/opt/us100-usingloader/bin</value>
        <value type="QString">/opt/us100-usingloader/bin</value>
@@ -289,9 +292,11 @@
        <value type="QString"></value>
        <value type="QString"></value>
        <value type="QString"></value>
+       <value type="QString"></value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedTimes">
        <value type="QDateTime">2019-06-22T18:12:59</value>
+       <value type="QDateTime">2019-07-05T20:28:41</value>
        <value type="QDateTime">2019-07-05T19:22:41</value>
        <value type="QDateTime">2019-06-27T18:29:19</value>
        <value type="QDateTime">2019-06-26T16:10:48</value>

@@ -42,8 +42,7 @@ Item{
             MouseArea{
                 anchors.fill:parent
                 onClicked: {
-                    first = false;
-                    navModel.reset("prev");
+                    navModel.reset("prev")
                     loader.setSource("Page5.qml")
                 }
             }
@@ -64,8 +63,7 @@ Item{
             MouseArea{
                 anchors.fill:parent
                 onClicked:{
-                    first = false;
-                    navModel.reset("next");
+                    navModel.reset("next")
                     loader.setSource("Page2.qml")
                 }
             }

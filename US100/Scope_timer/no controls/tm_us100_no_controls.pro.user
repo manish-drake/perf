@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.4.1, 2019-07-05T20:38:05. -->
+<!-- Written by QtCreator 4.4.1, 2019-07-09T16:04:46. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -269,22 +269,28 @@
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100_no_controls-Brig-Debug-timer/tm_us100_no_controls</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100_no_controls-Brig-Debug/us100_no_controls</value>
-       <value type="QString">/home/gurpreet/git/perf/US100/build-us100_no_controls-Brig-Debug/us100_no_controls</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/build-us100_no_controls-Brig-Debug-timer/tm_us100_no_controls</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100_no_controls-Brig-Debug-timer/us100_no_controls</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/build-us100_no_controls-Brig-Debug/us100_no_controls</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/build-us100_no_controls-Brig-Debug-timer/tm_us100_no_controls</value>
        <value type="QString">/home/gurpreet/git/perf/US100/build-us100_no_controls-Brig-Debug-timer/tm_us100_no_controls</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
-       <value type="QString">192.168.10.14</value>
-       <value type="QString">192.168.10.4</value>
-       <value type="QString">192.168.20.35</value>
-       <value type="QString">192.168.10.2</value>
        <value type="QString">192.168.10.9</value>
+       <value type="QString">192.168.20.35</value>
+       <value type="QString">192.168.10.5</value>
+       <value type="QString">192.168.10.2</value>
+       <value type="QString">192.168.10.4</value>
+       <value type="QString">192.168.10.14</value>
+       <value type="QString">192.168.10.10</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/opt/tm_us100_no_controls/bin</value>
        <value type="QString">/opt/us100_no_controls/bin</value>
+       <value type="QString">/opt/tm_us100_no_controls/bin</value>
        <value type="QString">/opt/us100_no_controls/bin</value>
        <value type="QString">/opt/us100_no_controls/bin</value>
+       <value type="QString">/opt/tm_us100_no_controls/bin</value>
        <value type="QString">/opt/tm_us100_no_controls/bin</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedSysroots">
@@ -293,13 +299,17 @@
        <value type="QString"></value>
        <value type="QString"></value>
        <value type="QString"></value>
+       <value type="QString"></value>
+       <value type="QString"></value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2019-07-05T20:24:17</value>
-       <value type="QDateTime">2019-06-26T16:05:43</value>
-       <value type="QDateTime">2019-06-22T18:34:36</value>
-       <value type="QDateTime">2019-06-27T18:36:52</value>
        <value type="QDateTime">2019-07-05T19:15:06</value>
+       <value type="QDateTime">2019-06-22T18:34:36</value>
+       <value type="QDateTime">2019-07-06T12:05:26</value>
+       <value type="QDateTime">2019-06-27T18:36:52</value>
+       <value type="QDateTime">2019-06-26T16:05:43</value>
+       <value type="QDateTime">2019-07-05T20:24:17</value>
+       <value type="QDateTime">2019-07-09T16:02:27</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>

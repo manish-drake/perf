@@ -6,11 +6,7 @@ ApplicationWindow {
     visible: true
     width: 480
     height: 800
-    title: qsTr("us200")
-    Component{Page2{}}
-    Component{Page3{}}
-    Component{Page4{}}
-    Component{Page5{}}
+    title: qsTr("us200")    
     Loader{
         id:loader
         anchors.fill: parent

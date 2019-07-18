@@ -1,8 +1,8 @@
 #include "sock.h"
 const char *ENDPOINT = "tcp://127.0.0.1:6000";
-Sock::Sock() : m_socket(*getCtx(), ZMQ_DEALER)
+Sock::Sock()
 {
-    m_socket.connect(ENDPOINT);
+    
 }
 void Sock::Listen(std::function<std::string(const std::string&)> &&cb)
 {
@@ -38,11 +38,13 @@ void Sock::Listen(std::function<std::string(const std::string&)> &&cb)
 }
 std::string Sock::Send(const char *msg, int sz)
 {
+    zmq::socket_t socket(*getCtx(), ZMQ_DEALER);
     zmq::message_t message(sz);
+    socket.connect(ENDPOINT);
     memcpy(message.data(), msg, sz);
-    m_socket.send(message);
+    socket.send(message);
     zmq::message_t reply;
-    m_socket.recv(&reply);
+    socket.recv(&reply);
     std::string smessage(static_cast<char *>(reply.data()), reply.size());
     return smessage;
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.4.1, 2019-07-18T15:45:42. -->
+<!-- Written by QtCreator 4.4.1, 2019-07-18T19:07:21. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -268,26 +268,29 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
        <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
        <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-mem_3layerswithloader-Brig-Debug/mem_3layerswithloader</value>
-       <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
-       <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
-       <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
        <value type="QString">/home/gurpreet/git/perf/US100/Scope_memory/build-tm_3layerswithloader-Brig-Debug/tm_3layerswithloader</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
-       <value type="QString">192.168.10.7</value>
        <value type="QString">192.168.10.9</value>
-       <value type="QString">192.168.10.10</value>
+       <value type="QString">192.168.10.7</value>
        <value type="QString">192.168.10.14</value>
+       <value type="QString">192.168.10.6</value>
+       <value type="QString">192.168.10.10</value>
        <value type="QString">192.168.10.9</value>
        <value type="QString">192.168.10.5</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/opt/tm_3layerswithloader/bin</value>
+       <value type="QString">/opt/tm_3layerswithloader/bin</value>
+       <value type="QString">/opt/tm_3layerswithloader/bin</value>
+       <value type="QString">/opt/tm_3layerswithloader/bin</value>
+       <value type="QString">/opt/tm_3layerswithloader/bin</value>
        <value type="QString">/opt/mem_3layerswithloader/bin</value>
-       <value type="QString">/opt/tm_3layerswithloader/bin</value>
-       <value type="QString">/opt/tm_3layerswithloader/bin</value>
-       <value type="QString">/opt/tm_3layerswithloader/bin</value>
        <value type="QString">/opt/tm_3layerswithloader/bin</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedSysroots">
@@ -297,13 +300,15 @@
        <value type="QString"></value>
        <value type="QString"></value>
        <value type="QString"></value>
+       <value type="QString"></value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2019-07-10T17:16:08</value>
-       <value type="QDateTime">2019-07-05T18:43:32</value>
-       <value type="QDateTime">2019-07-09T16:19:14</value>
-       <value type="QDateTime">2019-07-05T20:18:52</value>
        <value type="QDateTime">2019-07-05T19:46:08</value>
+       <value type="QDateTime">2019-07-10T17:16:08</value>
+       <value type="QDateTime">2019-07-05T20:18:52</value>
+       <value type="QDateTime">2019-07-18T19:04:59</value>
+       <value type="QDateTime">2019-07-09T16:19:14</value>
+       <value type="QDateTime">2019-07-05T18:43:32</value>
        <value type="QDateTime">2019-07-06T11:43:08</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>

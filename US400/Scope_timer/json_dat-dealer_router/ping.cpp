@@ -22,7 +22,7 @@ void Ping::Start()
     gettimeofday(&start, NULL);
 
     Sock sock;
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 1000; i++)
     {
         char msg[1024] = {0};
         int sz = 0;

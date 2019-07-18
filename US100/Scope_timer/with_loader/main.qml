@@ -7,6 +7,7 @@ ApplicationWindow {
     width: 480
     height: 800
     title: qsTr("us100-using loader")
+    Component{Page2{}}
     Loader{
         id: pageLoader
         source: "qrc:/Page2.qml"

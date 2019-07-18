@@ -13,6 +13,7 @@ class Sock
         static auto context = zmq::context_t(1);
         return &context;
     }
+    zmq::socket_t m_socket;
 
 public:
     Sock();

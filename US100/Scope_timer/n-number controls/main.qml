@@ -6,7 +6,7 @@ ApplicationWindow {
     visible: true
     width: 480
     height: 800
-    title: qsTr("n-number-controls")
+    title: qsTr("n-number-controls")    
     Page1{}
     Component.onCompleted: {
         navModel.appLoaded()

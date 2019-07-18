@@ -18,7 +18,7 @@ void Ping::Create(Request *request, Reply *reply)
 void Ping::Start()
 {
     scope_memself s;
-    s.Reset("init");
+    s.Reset("start");
     Sock sock;
     for (int i = 0; i < 10000; i++)
     {

@@ -5,8 +5,7 @@
 #include "pong.h"
 #include "request_json.h"
 #include "reply_json.h"
-// #include "request_binary.h"
-// #include "reply_binary.h"
+#include "scope_memself.h"
 
 using std::string;
 

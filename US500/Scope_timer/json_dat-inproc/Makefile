@@ -1,9 +1,9 @@
 ####### Compiler, tools and options
 
-# CC            = gcc
-# CXX           = g++
+#CC            = gcc
+#CXX           = g++
 DEFINES       = 
-# CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+#CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      += -pipe -g -MMD -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I.
 VPATH	      = .
@@ -21,8 +21,8 @@ DEL_DIR       = rmdir
 MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
-# LINK          = g++
-# LFLAGS        = 
+#LINK          = g++
+#LFLAGS        = 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -92,3 +92,4 @@ env:
 	@echo Clean       : $(DEL_FILE) $(OBJECTS) $(DEPS) $(DESTDIR)/$(TARGET)
 
 -include $(DEPS)
+

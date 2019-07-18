@@ -7,7 +7,10 @@ ApplicationWindow {
     width: 480
     height: 800
     title: qsTr("us200")
-    property string currPath
+    Component{Page2{}}
+    Component{Page3{}}
+    Component{Page4{}}
+    Component{Page5{}}
     Loader{
         id:loader
         anchors.fill: parent

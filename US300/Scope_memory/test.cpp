@@ -28,11 +28,8 @@ void Test::Run()
     #4 sends back
     #5 repeat for 10k iterations
     */ 
-    scope_memself s;  
-    
+    scope_memself s;      
     m_ping.Start();
-
-    s.Dispose();
 }
 
 void Test::Teardown()

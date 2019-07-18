@@ -13,7 +13,7 @@ Item {
         spacing: 0
         Text{
             id:abc
-            text:"n_controls with static data navigation"}
+            text:"n_controls with staztic data navigation"}
         Rectangle{
             id:frame
             Layout.fillWidth: true

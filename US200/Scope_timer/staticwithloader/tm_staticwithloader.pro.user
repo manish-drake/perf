@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.4.1, 2019-07-10T16:10:23. -->
+<!-- Written by QtCreator 4.4.1, 2019-07-18T16:07:34. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -267,37 +267,43 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
+       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/staticwithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug/staticwithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/staticwithloader</value>
        <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/tm_staticwithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/tm_staticwithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/staticwithloader</value>
        <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug/staticwithloader</value>
        <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug/staticwithloader</value>
        <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/tm_staticwithloader</value>
-       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/staticwithloader</value>
-       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug/staticwithloader</value>
        <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/tm_staticwithloader</value>
-       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/staticwithloader</value>
-       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/staticwithloader</value>
+       <value type="QString">/home/gurpreet/git/perf/US200/build-staticwithloader-Brig-Debug-timer/tm_staticwithloader</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
-       <value type="QString">192.168.10.10</value>
-       <value type="QString">192.168.20.35</value>
+       <value type="QString">192.168.10.9</value>
        <value type="QString">192.168.10.4</value>
-       <value type="QString">192.168.10.9</value>
        <value type="QString">192.168.10.2</value>
-       <value type="QString">192.168.10.10</value>
        <value type="QString">192.168.10.5</value>
+       <value type="QString">192.168.10.6</value>
        <value type="QString">192.168.10.9</value>
+       <value type="QString">192.168.20.35</value>
+       <value type="QString">192.168.10.10</value>
        <value type="QString">192.168.10.9</value>
+       <value type="QString">192.168.10.7</value>
+       <value type="QString">192.168.10.10</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
-       <value type="QString">/opt/tm_staticwithloader/bin</value>
-       <value type="QString">/opt/staticwithloader/bin</value>
-       <value type="QString">/opt/staticwithloader/bin</value>
-       <value type="QString">/opt/tm_staticwithloader/bin</value>
-       <value type="QString">/opt/staticwithloader/bin</value>
-       <value type="QString">/opt/staticwithloader/bin</value>
-       <value type="QString">/opt/tm_staticwithloader/bin</value>
-       <value type="QString">/opt/staticwithloader/bin</value>
        <value type="QString">/opt</value>
+       <value type="QString">/opt/staticwithloader/bin</value>
+       <value type="QString">/opt/staticwithloader/bin</value>
+       <value type="QString">/opt/tm_staticwithloader/bin</value>
+       <value type="QString">/opt/tm_staticwithloader/bin</value>
+       <value type="QString">/opt/staticwithloader/bin</value>
+       <value type="QString">/opt/staticwithloader/bin</value>
+       <value type="QString">/opt/staticwithloader/bin</value>
+       <value type="QString">/opt/tm_staticwithloader/bin</value>
+       <value type="QString">/opt/tm_staticwithloader/bin</value>
+       <value type="QString">/opt/tm_staticwithloader/bin</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedSysroots">
        <value type="QString"></value>
@@ -309,17 +315,21 @@
        <value type="QString"></value>
        <value type="QString"></value>
        <value type="QString"></value>
+       <value type="QString"></value>
+       <value type="QString"></value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2019-07-09T16:23:27</value>
-       <value type="QDateTime">2019-06-22T17:22:36</value>
-       <value type="QDateTime">2019-06-26T15:53:08</value>
-       <value type="QDateTime">2019-07-05T15:38:50</value>
-       <value type="QDateTime">2019-06-27T19:13:33</value>
-       <value type="QDateTime">2019-06-25T20:39:20</value>
-       <value type="QDateTime">2019-07-06T13:35:32</value>
-       <value type="QDateTime">2019-07-05T13:46:09</value>
        <value type="QDateTime">2019-07-05T12:56:56</value>
+       <value type="QDateTime">2019-06-26T15:53:08</value>
+       <value type="QDateTime">2019-06-27T19:13:33</value>
+       <value type="QDateTime">2019-07-17T18:01:56</value>
+       <value type="QDateTime">2019-07-18T15:46:44</value>
+       <value type="QDateTime">2019-07-05T13:46:09</value>
+       <value type="QDateTime">2019-06-22T17:22:36</value>
+       <value type="QDateTime">2019-06-25T20:39:20</value>
+       <value type="QDateTime">2019-07-05T15:38:50</value>
+       <value type="QDateTime">2019-07-10T17:20:41</value>
+       <value type="QDateTime">2019-07-09T16:23:27</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>

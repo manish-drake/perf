@@ -7,7 +7,6 @@ ApplicationWindow {
     width: 480
     height: 800
     title: qsTr("us200")
-    property string currPath
     Loader{
         id:loader
         anchors.fill: parent

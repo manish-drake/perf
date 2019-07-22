@@ -24,7 +24,7 @@
             ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++14"
         },
         {
             "name": "Linux",
@@ -37,7 +37,6 @@
                 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed",
                 "/usr/include/x86_64-linux-gnu",
                 "/usr/include",
-                "/home/manish/git/libzmq-bin/include",
                 "${workspaceRoot}"
             ],
             "defines": [],
@@ -52,7 +51,6 @@
                     "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed",
                     "/usr/include/x86_64-linux-gnu",
                     "/usr/include",
-                    "/home/manish/git/libzmq-bin/include",
                     "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
@@ -60,7 +58,7 @@
             },
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++14"
         },
         {
             "name": "Win32",
@@ -84,7 +82,7 @@
             },
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++14"
         }
     ],
     "version": 4

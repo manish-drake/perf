@@ -14,6 +14,7 @@ class Sock
         return &context;
     }
     bool m_closed = false;
+
 public:
     Sock();
     void Listen(std::function<void(char *reqMsg, int reqSz, char **repMsg, int &repSz)> &&cb);

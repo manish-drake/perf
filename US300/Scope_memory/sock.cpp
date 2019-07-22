@@ -3,8 +3,9 @@
 #include <iostream>
 
 const char *ENDPOINT = "tcp://127.0.0.1:6000";
-Sock::Sock()
+Sock::Sock() : m_socket(*getCtx(), ZMQ_REQ)
 {
+    m_socket.connect(ENDPOINT);
 }
 void Sock::Listen(std::function<void(char *reqMsg, int reqSz, char **repMsg, int &repSz)> &&cb)
 {
@@ -48,14 +49,12 @@ void Sock::Send(char *reqMsg, int reqSz, char **repMsg, int &repSz)
 {
     if (getCtx())
     {
-        zmq::socket_t socket(*getCtx(), ZMQ_REQ);
         zmq::message_t message(reqSz);
         memcpy(message.data(), reqMsg, reqSz);
-        socket.connect(ENDPOINT);
-        socket.send(message);
+        m_socket.send(message);
 
         zmq::message_t reply;
-        socket.recv(&reply);
+        m_socket.recv(&reply);
         *repMsg = (char *)reply.data();
         repSz = reply.size();
         // std::cout << *repMsg << std::endl;

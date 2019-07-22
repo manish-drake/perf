@@ -5,6 +5,7 @@
 const char *ENDPOINT = "tcp://127.0.0.1:6000";
 Sock::Sock()
 {
+    
 }
 void Sock::Listen(std::function<void(char *reqMsg, int reqSz, char **repMsg, int &repSz)> &&cb)
 {
@@ -23,7 +24,6 @@ void Sock::Listen(std::function<void(char *reqMsg, int reqSz, char **repMsg, int
             {
                 socket.recv(&message);
                 auto reqMsg = (char *)message.data();
-                // std::cout << reqMsg << std::endl;
                 auto reqSz = message.size();
                 char *repMsg;
                 int repSz;
@@ -50,8 +50,8 @@ void Sock::Send(char *reqMsg, int reqSz, char **repMsg, int &repSz)
     {
         zmq::socket_t socket(*getCtx(), ZMQ_REQ);
         zmq::message_t message(reqSz);
-        memcpy(message.data(), reqMsg, reqSz);
         socket.connect(ENDPOINT);
+        memcpy(message.data(), reqMsg, reqSz);
         socket.send(message);
 
         zmq::message_t reply;

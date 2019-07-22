@@ -17,10 +17,8 @@ void Ping::Create(Request *request, Reply *reply)
 
 void Ping::Start()
 {
-    scope_memself s;
-    s.Reset("init");
     Sock sock;
-    for (int i = 0; i < 10000; i++)
+    for (int i = 0; i < 2000; i++)
     {
         char *reqMsg;
         int sz = 0;
@@ -29,12 +27,11 @@ void Ping::Start()
         char *repMsg;
         int  repSz;
         sock.Send(reqMsg, sz, &repMsg, repSz);
-        m_reply->Process(repMsg, repSz); //Process the reply CUATADSBSummary
+        // m_reply->Process(repMsg, repSz); //Process the reply CUATADSBSummary
         free(reqMsg);
         std::cout << "Loop: " << i << std::endl;
     }
     std::cout << "done!" ;
-    s.Dispose();
 }
 
 Ping::~Ping()

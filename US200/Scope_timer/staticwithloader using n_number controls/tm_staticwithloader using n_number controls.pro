@@ -1,4 +1,4 @@
-QT += quick core
+QT += quick
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -13,9 +13,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += main.cpp \
-    navmodel.cpp \
-    touchy.cpp \
-    qwindowsysteminterface.cpp
+    navmodel.cpp
 
 RESOURCES += qml.qrc
 
@@ -42,6 +40,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     navmodel.h \
-    scope_timer.h \
-    touchy.h \
-    qwindowsysteminterface.h
+    scope_timer.h

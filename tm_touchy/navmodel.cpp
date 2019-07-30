@@ -1,5 +1,7 @@
 #include "navmodel.h"
 
+NavModel* NavModel::m_singleton = nullptr;
+
 NavModel::NavModel(QObject *parent):
     QObject(parent)
 {

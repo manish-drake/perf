@@ -12,10 +12,10 @@
 #include <fcntl.h>
 #include <QGuiApplication>
 #include <QTransform>
-#include <qwindowsysteminterface.h>
 #include <QPointer>
 #include <QDebug>
 #include <QString>
+#include "navmodel.h"
 
 class QEvdevTouchScreenData
 {
@@ -91,9 +91,9 @@ QEvdevTouchScreenData::QEvdevTouchScreenData(touchy *q_ptr)
       m_lastEventType(-1),
       m_currentSlot(0),
       m_timeStamp(0), m_lastTimeStamp(0),
-      hw_range_x_min(0), hw_range_x_max(1023),
-      hw_range_y_min(0), hw_range_y_max(1023),
-      hw_pressure_min(0), hw_pressure_max(1023),
+      hw_range_x_min(0), hw_range_x_max(0),
+      hw_range_y_min(0), hw_range_y_max(0),
+      hw_pressure_min(0), hw_pressure_max(0),
       m_forceToActiveWindow(false), m_typeB(false), m_singleTouch(false),
       m_filtered(false), m_prediction(0)
 {
@@ -109,17 +109,108 @@ QEvdevTouchScreenData::QEvdevTouchScreenData(touchy *q_ptr)
 touchy::touchy(QObject *parent) : QObject(parent), m_fd(0)
 {
     d = new QEvdevTouchScreenData(this);
-    const char *input = "/dev/input/touchscreen0";
-    m_fd = open(input, O_RDONLY | O_NDELAY);
-    QSocketNotifier *m_notify = new QSocketNotifier(m_fd, QSocketNotifier::Read, this);
-    connect(m_notify, SIGNAL(activated(int)), this, SLOT(run(int)));
+    const char *dev = "/dev/input/touchscreen0";
+    m_fd = open(dev, O_RDONLY | O_NDELAY);
+    if (m_fd >= 0) {
+        QSocketNotifier *m_notify = new QSocketNotifier(m_fd, QSocketNotifier::Read, this);
+        connect(m_notify, SIGNAL(activated(int)), this, SLOT(run(int)));
+    }else {
+        qDebug("evdevtouch: Cannot open input device!!");
+        return;
+    }
     std::cout << "file open: " << m_fd << std::endl;
+
+    bool printDeviceInfo = true;
+
+    if (printDeviceInfo)
+            qDebug("evdevtouch: Using device %s", qPrintable(dev));
+
+
+
+#if !defined(QT_NO_MTDEV)
+    const char *mtdevStr = "(mtdev)";
+    d->m_typeB = true;
+#else
+    const char *mtdevStr = "";
+    long absbits[NUM_LONGS(ABS_CNT)];
+    if (ioctl(m_fd, EVIOCGBIT(EV_ABS, sizeof(absbits)), absbits) >= 0) {
+        d->m_typeB = testBit(ABS_MT_SLOT, absbits);
+        d->m_singleTouch = !testBit(ABS_MT_POSITION_X, absbits);
+    }
+#endif
+
+    if (printDeviceInfo)
+        qDebug("evdevtouch: Protocol type %c %s (%s)", d->m_typeB ? 'B' : 'A',
+               mtdevStr, d->m_singleTouch ? "single" : "multi");
+
+    input_absinfo absInfo;
+    memset(&absInfo, 0, sizeof(input_absinfo));
+    bool has_x_range = false, has_y_range = false;
+
+    if (ioctl(m_fd, EVIOCGABS((d->m_singleTouch ? ABS_X : ABS_MT_POSITION_X)), &absInfo) >= 0) {
+        if (printDeviceInfo)
+            qDebug("evdevtouch: min X: %d max X: %d", absInfo.minimum, absInfo.maximum);
+        d->hw_range_x_min = absInfo.minimum;
+        d->hw_range_x_max = absInfo.maximum;
+        has_x_range = true;
+    }
+
+    if (ioctl(m_fd, EVIOCGABS((d->m_singleTouch ? ABS_Y : ABS_MT_POSITION_Y)), &absInfo) >= 0) {
+        if (printDeviceInfo)
+            qDebug("evdevtouch: min Y: %d max Y: %d", absInfo.minimum, absInfo.maximum);
+        d->hw_range_y_min = absInfo.minimum;
+        d->hw_range_y_max = absInfo.maximum;
+        has_y_range = true;
+    }
+
+    if (!has_x_range || !has_y_range)
+        qWarning("evdevtouch: Invalid ABS limits, behavior unspecified");
+
+    if (ioctl(m_fd, EVIOCGABS(ABS_PRESSURE), &absInfo) >= 0) {
+        if (printDeviceInfo)
+            qDebug("evdevtouch: min pressure: %d max pressure: %d", absInfo.minimum, absInfo.maximum);
+        if (absInfo.maximum > absInfo.minimum) {
+            d->hw_pressure_min = absInfo.minimum;
+            d->hw_pressure_max = absInfo.maximum;
+        }
+    }
+
+    char name[1024];
+    if (ioctl(m_fd, EVIOCGNAME(sizeof(name) - 1), name) >= 0) {
+        d->hw_name = QString::fromLocal8Bit(name);
+        if (printDeviceInfo)
+            qDebug("evdevtouch: device name: %s", name);
+    }
+
+    bool grabSuccess = !ioctl(m_fd, EVIOCGRAB, (void *) 1);
+    if (grabSuccess)
+        ioctl(m_fd, EVIOCGRAB, (void *) 0);
+    else
+        qWarning("evdevtouch: The device is grabbed by another process. No events will be read.");
+
+    int rotationAngle = 90;
+    if (rotationAngle)
+        d->m_rotate = QTransform::fromTranslate(0.5, 0.5).rotate(rotationAngle).translate(-0.5, -0.5);
+
+    registerDevice();
 }
 
 touchy::~touchy()
 {
     std::cout << "closing: " << m_fd << std::endl;
     close(m_fd);
+}
+
+void touchy::registerDevice()
+{
+    m_device = new QTouchDevice;
+    m_device->setName("MyScreen");
+    m_device->setType(QTouchDevice::TouchScreen);
+    m_device->setCapabilities(QTouchDevice::Position | QTouchDevice::Area);
+    //        if (hw_pressure_max > hw_pressure_min)
+    m_device->setCapabilities(m_device->capabilities() | QTouchDevice::Pressure);
+
+    QWindowSystemInterface::registerTouchDevice(m_device);
 }
 
 void touchy::run(int fd)
@@ -275,20 +366,20 @@ void QEvdevTouchScreenData::reportPoints()
         else
             tp.pressure = (tp.pressure - hw_pressure_min) / qreal(hw_pressure_max - hw_pressure_min);
 
-        qDebug() << "Touchpoint:: x:" << tp.normalPosition.x() << "; y:" << tp.normalPosition.y() << "; pressure:" << tp.pressure;
+        qDebug() << "Touchpoint::" << i << " x:" << tp.normalPosition.x() << "; y:" << tp.normalPosition.y() << "; pressure:" << tp.pressure;
     }
 
 
     // Let qguiapp pick the target window.
     if (m_filtered){
-        qDebug() << "touchPointsUpdated";
         emit q->touchPointsUpdated();
     }
     else {
-        qDebug() << "::handleTouchEvent::";
+        NavModel::Instance().reset(QString("::::::::::::::::::::::::::::::::::::::::::::::::::::::::Touch::"));
         QWindowSystemInterface::handleTouchEvent(Q_NULLPTR, q->touchDevice(), m_touchPoints);
     }
 }
+
 void QEvdevTouchScreenData::addTouchPoint(const Contact &contact, Qt::TouchPointStates *combinedStates)
 {
     QWindowSystemInterface::TouchPoint tp;
@@ -330,8 +421,7 @@ void QEvdevTouchScreenData::processInputEvent(input_event *data)
 {
 
     if (data->type == EV_ABS) {
-//        qDebug() << "Code:" << getCodeName(data->code) << ":" << data->value;
-        m_singleTouch = true;
+        //        qDebug() << "Code:" << getCodeName(data->code) << ":" << data->value;
 
         if (data->code == ABS_MT_POSITION_X || (m_singleTouch && data->code == ABS_X)) {
             m_currentData.x = qBound(hw_range_x_min, data->value, hw_range_x_max);
